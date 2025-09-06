@@ -1,0 +1,10 @@
+[project]
+name = "audio-separate"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "audio-separator[cpu]>=0.24.1",
+    "torch==2.2.2",
+]

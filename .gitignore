@@ -1,0 +1,17 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# 分離結果など大容量ファイル
+inputs/
+outputs/
+
+# OS
+.DS_Store

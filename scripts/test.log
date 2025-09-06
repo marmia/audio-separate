@@ -1,0 +1,65 @@
+
+---- audio-separator stderr ----
+2025-09-07 02:55:33.194 - INFO - cli - Separator version 0.24.1 beginning with input file(s): inputs/The Beatles - Love Me Do_0013.wav
+2025-09-07 02:55:33.195 - INFO - separator - Separator version 0.24.1 instantiating with output_dir: outputs, output_format: FLAC
+2025-09-07 02:55:33.195 - INFO - separator - Operating System: Darwin Darwin Kernel Version 24.6.0: Mon Jul 14 11:28:17 PDT 2025; root:xnu-11417.140.69~1/RELEASE_X86_64
+2025-09-07 02:55:33.208 - INFO - separator - System: Darwin Node: MasahironoMacBook-Pro.local Release: 24.6.0 Machine: x86_64 Proc: i386
+2025-09-07 02:55:33.208 - INFO - separator - Python Version: 3.11.11
+2025-09-07 02:55:33.208 - INFO - separator - PyTorch Version: 2.2.2
+2025-09-07 02:55:33.311 - INFO - separator - FFmpeg installed: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+2025-09-07 02:55:33.312 - DEBUG - separator - Python package: onnxruntime-gpu not installed
+2025-09-07 02:55:33.312 - DEBUG - separator - Python package: onnxruntime-silicon not installed
+2025-09-07 02:55:33.313 - INFO - separator - ONNX Runtime CPU package installed with version: 1.22.1
+2025-09-07 02:55:33.328 - INFO - separator - No hardware acceleration could be configured, running in CPU mode
+2025-09-07 02:55:33.328 - INFO - separator - Loading model UVR-MDX-NET-Inst_HQ_3.onnx...
+2025-09-07 02:55:33.328 - DEBUG - separator - File already exists at /tmp/audio-separator-models/download_checks.json, skipping download
+2025-09-07 02:55:33.328 - DEBUG - separator - UVR model download list loaded
+2025-09-07 02:55:33.329 - DEBUG - separator - Audio-Separator model list loaded
+2025-09-07 02:55:33.329 - DEBUG - separator - Searching for model_filename UVR-MDX-NET-Inst_HQ_3.onnx in supported_model_files_grouped
+2025-09-07 02:55:33.329 - DEBUG - separator - Single file model identified: MDX-Net Model: UVR-MDX-NET Inst HQ 3
+2025-09-07 02:55:33.329 - DEBUG - separator - File already exists at /tmp/audio-separator-models/UVR-MDX-NET-Inst_HQ_3.onnx, skipping download
+2025-09-07 02:55:33.329 - DEBUG - separator - Returning path for single model file: /tmp/audio-separator-models/UVR-MDX-NET-Inst_HQ_3.onnx
+2025-09-07 02:55:33.329 - DEBUG - separator - Model downloaded, friendly name: MDX-Net Model: UVR-MDX-NET Inst HQ 3, model_path: /tmp/audio-separator-models/UVR-MDX-NET-Inst_HQ_3.onnx
+2025-09-07 02:55:33.329 - DEBUG - separator - Calculating MD5 hash for model file to identify model parameters from UVR data...
+2025-09-07 02:55:33.329 - DEBUG - separator - Calculating hash of model file /tmp/audio-separator-models/UVR-MDX-NET-Inst_HQ_3.onnx
+2025-09-07 02:55:33.349 - DEBUG - separator - Model /tmp/audio-separator-models/UVR-MDX-NET-Inst_HQ_3.onnx has hash 55657dd70583b0fedfba5f67df11d711
+2025-09-07 02:55:33.349 - DEBUG - separator - VR model data path set to /tmp/audio-separator-models/vr_model_data.json
+2025-09-07 02:55:33.349 - DEBUG - separator - File already exists at /tmp/audio-separator-models/vr_model_data.json, skipping download
+2025-09-07 02:55:33.349 - DEBUG - separator - MDX model data path set to /tmp/audio-separator-models/mdx_model_data.json
+2025-09-07 02:55:33.349 - DEBUG - separator - File already exists at /tmp/audio-separator-models/mdx_model_data.json, skipping download
+2025-09-07 02:55:33.349 - DEBUG - separator - Loading MDX and VR model parameters from UVR model data files...
+2025-09-07 02:55:33.350 - DEBUG - separator - Model data loaded from UVR JSON using hash 55657dd70583b0fedfba5f67df11d711: {'compensate': 1.022, 'mdx_dim_f_set': 3072, 'mdx_dim_t_set': 8, 'mdx_n_fft_scale_set': 6144, 'primary_stem': 'Instrumental'}
+2025-09-07 02:55:33.350 - DEBUG - separator - Importing module for model type MDX: mdx_separator.MDXSeparator
+Traceback (most recent call last):
+  File "/Users/marmia/Documents/Projects/audio-separate/.venv/bin/audio-separator", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/marmia/Documents/Projects/audio-separate/.venv/lib/python3.11/site-packages/audio_separator/utils/cli.py", line 205, in main
+    separator.load_model(model_filename=args.model_filename)
+  File "/Users/marmia/Documents/Projects/audio-separate/.venv/lib/python3.11/site-packages/audio_separator/separator/separator.py", line 730, in load_model
+    module = importlib.import_module(f"audio_separator.separator.architectures.{module_name}")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marmia/.local/share/uv/python/cpython-3.11.11-macos-x86_64-none/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/marmia/Documents/Projects/audio-separate/.venv/lib/python3.11/site-packages/audio_separator/separator/architectures/mdx_separator.py", line 6, in <module>
+    import onnx
+  File "/Users/marmia/Documents/Projects/audio-separate/.venv/lib/python3.11/site-packages/onnx/__init__.py", line 131, in <module>
+    from onnx import (
+  File "/Users/marmia/Documents/Projects/audio-separate/.venv/lib/python3.11/site-packages/onnx/compose.py", line 8, in <module>
+    from onnx import (
+  File "/Users/marmia/Documents/Projects/audio-separate/.venv/lib/python3.11/site-packages/onnx/helper.py", line 21, in <module>
+    from onnx import _mapping, defs, subbyte
+  File "/Users/marmia/Documents/Projects/audio-separate/.venv/lib/python3.11/site-packages/onnx/_mapping.py", line 104, in <module>
+    np.dtype(ml_dtypes.float4_e2m1fn),
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ml_dtypes' has no attribute 'float4_e2m1fn'. Did you mean: 'float8_e4m3fn'?
+
+error: audio-separator の実行に失敗しました (code=1)
+[info] 実行コマンド: /Users/marmia/Documents/Projects/audio-separate/.venv/bin/audio-separator --output_dir outputs -d -m UVR-MDX-NET-Inst_HQ_3.onnx inputs/The Beatles - Love Me Do_0013.wav

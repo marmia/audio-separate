@@ -12,6 +12,7 @@ wheels/
 # 分離結果など大容量ファイル
 inputs/
 outputs/
+models/
 
 # OS
 .DS_Store
